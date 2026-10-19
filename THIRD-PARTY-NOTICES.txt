@@ -1,0 +1,53 @@
+Kingshot Recorder - third-party notices
+
+Kingshot Recorder itself is Copyright (c) 2026 wlfk - 685. All rights reserved (see LICENSE.txt).
+
+The program ships with, and uses, the following third-party software. These components are NOT covered by the
+copyright notice above: each stays under its own license, which is given or linked below. They are used unmodified,
+as separate programs or libraries.
+
+
+1. FFmpeg 7.0.2 ("full" shared build by gyan.dev) - ffmpeg.exe, ffprobe.exe and the avcodec / avformat / avutil /
+   avfilter / avdevice / swscale / swresample / postproc DLLs next to them
+   License: GNU General Public License, version 3 or later (the build is configured with --enable-gpl and
+   --enable-version3; it also contains components under other free licenses, e.g. LGPL, BSD, MIT).
+   Copyright (c) 2000-2024 the FFmpeg developers.
+   Program: https://ffmpeg.org/   Windows build: https://www.gyan.dev/ffmpeg/builds/
+   License text: GPL-3.0.txt (included next to this file), also https://www.gnu.org/licenses/gpl-3.0.html
+   The exact build used: https://github.com/GyanD/codexffmpeg/releases/tag/7.0.2
+     (file ffmpeg-7.0.2-full_build-shared.zip)
+   Corresponding source code (the unmodified 7.0.2 release): https://ffmpeg.org/releases/ffmpeg-7.0.2.tar.xz
+   (the sources of the libraries it was built with are listed on the gyan.dev builds page). Kingshot Recorder starts
+   ffmpeg and ffprobe as separate programs and does not link to them. You may replace ffmpeg.exe and its DLLs with
+   another build of the same major version.
+
+2. scrcpy 5.0.1 - the tools\scrcpy folder (scrcpy.exe, scrcpy-server, adb.exe and its DLLs, SDL3, libusb and the
+   FFmpeg libraries it bundles)
+   License: Apache License 2.0 (scrcpy). Copyright (C) 2018 Genymobile, copyright (C) 2018-2025 Romain Vimont.
+   Source and license: https://github.com/Genymobile/scrcpy
+   The license text is included as tools\scrcpy\LICENSE.txt. adb.exe is part of the Android SDK Platform-Tools
+   (Apache License 2.0, https://developer.android.com/studio/releases/platform-tools). The other libraries in that
+   folder keep their own licenses (SDL: zlib license; libusb: LGPL 2.1; FFmpeg libraries: LGPL 2.1 or later).
+
+3. NumPy 2.3.5 - the tools\numpy and tools\numpy.libs folders
+   License: BSD 3-Clause (with the licenses of the libraries bundled in its wheel, such as OpenBLAS).
+   Copyright (c) 2005-2025, NumPy Developers.
+   Source and license: https://numpy.org/   The full text is included as tools\numpy-2.3.5.dist-info\LICENSE.txt.
+   The numpy.libs folder holds OpenBLAS (BSD 3-Clause, Copyright (c) 2011-2014 The OpenBLAS Project;
+   https://github.com/OpenMathLib/OpenBLAS/) and the Microsoft Visual C++ runtime (msvcp140). NumPy's license text
+   also covers the GCC runtime library libgfortran (GPL-3.0-or-later with the GCC Runtime Library Exception 3.1,
+   https://gcc.gnu.org/git/?p=gcc.git;a=tree;f=libgfortran); that library is not part of this program's files, and
+   the text is kept in the NumPy license file above in case a build contains it.
+
+4. Microsoft Visual C++ runtime files (VCRUNTIME140.dll, VCRUNTIME140_1.dll, msvcp140): redistributable files of
+   Microsoft Visual Studio, used under Microsoft's redistribution terms.
+
+5. Other components, each under a permissive license (MIT, BSD, PSF or similar):
+   - Python 3.14 and its standard library, including Tcl/Tk (the Tk license terms are included in tools\_tk_data)
+   - PyYAML, charset-normalizer
+   - Velopack (installer and updater)
+   - windows-capture and PyAudioWPatch (window and sound capture)
+   Their license texts are in the corresponding folders next to the program, or at the projects' web pages.
+
+If you believe a component is missing from this list, or you would like a copy of any source code mentioned above,
+use the contact given on the project's GitHub page.
