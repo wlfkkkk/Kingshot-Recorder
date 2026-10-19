@@ -12,6 +12,8 @@ It also records a whole screen or a single window, and can record an emulator an
 
 Windows only. Needs ADB access enabled in the emulator's settings.
 
+On the first start the app asks for a key, which you get from the person who shared it with you. It is asked once on each PC (and again if a later version changes the key). This is a simple gate to keep casual users out, not real protection: someone determined could get around it.
+
 ## Record
 
 1. Start your emulator (LDPlayer or BlueStacks) and open Kingshot.
@@ -45,3 +47,5 @@ Every recording and blur writes a log. When you report a bug, send the log files
 ---
 
 Kingshot Recorder by wlfk - 685
+
+Copyright (c) 2026 wlfk - 685. All rights reserved. Not open source: you may not copy, modify or redistribute this program or its code, with or without AI tools. See LICENSE.txt. The third-party programs it uses (FFmpeg, scrcpy, NumPy and others) keep their own licenses: see THIRD-PARTY-NOTICES.txt.
