@@ -1,0 +1,12 @@
+Kingshot Recorder
+Copyright (c) 2026 wlfk - 685. All rights reserved.
+
+This software and its source code are proprietary. Without the written permission of the copyright holder you may
+not copy, modify, adapt, translate, decompile, redistribute, publish, sell or use it (or any part of it) to create
+derivative works, whether by hand or with the help of automated or AI tools. You may use the released program for
+your own personal use if the copyright holder gave you access to it and its key.
+
+The software is provided "as is", without warranty of any kind.
+
+Third-party components bundled with the program (FFmpeg, scrcpy, Python and its libraries) are not covered by this
+notice and stay under their own licenses.
