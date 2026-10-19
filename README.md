@@ -1,27 +1,54 @@
 # Kingshot Recorder
 
-A Windows app that records your Android emulator (LDPlayer or BlueStacks) at higher quality than OBS, and has a built-in **Blurrer** that hides the in-game chat and Backpack screens in your videos before you share them.
+Records Kingshot from your Android emulator at higher quality than OBS, and has a built-in **Blurrer** that hides the in-game Chat and Backpack screens in your videos before you share them.
 
-It also records a whole screen or a single window, and can record an emulator and your screen at the same time.
+On Windows it can also record a whole screen or a single window, and can record an emulator and your screen at the same time.
 
-## Install
+| | Version | Status |
+|---|---|---|
+| **Windows** | 1.0.3 | Current release, with automatic updates. **1.0.4 is planned for Friday 23 October 2026.** |
+| **macOS** (Apple Silicon) | 0.1.0 | **Test release.** Recorder and Blurrer, with automatic updates. |
+
+## Install on Windows
 
 1. Download **KingshotRecorder-win-Setup.exe** from the [latest release](https://github.com/wlfkkkk/Kingshot-Recorder/releases/latest) and run it.
 2. It installs for your user only, with no admin rights, and adds a Start menu and Desktop shortcut.
-3. Updates are automatic: click the gear button and choose **Check for updates**. Only the changed files are downloaded, and your settings and videos stay as they are.
+3. Windows may show "Windows protected your PC" because the installer is not signed. Click **More info** and then **Run anyway**.
 
-Windows only. Needs ADB access enabled in the emulator's settings.
+Needs LDPlayer or BlueStacks with ADB access turned on in the emulator's settings.
 
-On the first start the app asks for a key, which you get from the person who shared it with you. It is asked once on each PC (and again if a later version changes the key). This is a simple gate to keep casual users out, not real protection: someone determined could get around it.
+## Install on Mac (test release)
+
+The Mac version is an early test build. It runs on Apple Silicon Macs (M1 or newer) and records the emulator (BlueStacks Air) only: no sound, screen or window recording yet.
+
+1. Download **KingshotRecorder-osx-Setup.pkg** from the [Mac 0.1.0 release](https://github.com/wlfkkkk/Kingshot-Recorder/releases/tag/mac-0.1.0). The "latest release" link above is for Windows.
+2. The app is not signed by Apple (only ad-hoc signed), so double-clicking the `.pkg` shows an "unidentified developer" warning. **Right-click the `.pkg` and choose Open**, then Open again. If macOS still blocks it, go to **System Settings > Privacy & Security** and click **Open Anyway**.
+3. macOS asks for your password, because it installs into Applications.
+4. Turn on ADB in BlueStacks Air's settings.
+
+## Updates
+
+Both versions update themselves from this page's releases. Click the gear button and choose **Check for updates**. Only the changed files are downloaded, and your settings and videos stay as they are. The app never updates during a recording or a blur.
+
+On the Mac, macOS may ask you once more to allow the app after an update, because it is not signed by Apple.
+
+## Access key
+
+On the first start the app asks for a key, which you get from the person who shared the app with you. It is asked once on each computer (and again if a later version changes the key). This is a simple gate to keep casual users out, not real protection.
 
 ## Record
 
-1. Start your emulator (LDPlayer or BlueStacks) and open Kingshot.
-2. In Kingshot Recorder, pick the emulator (or screen / window) to record.
+1. Start your emulator and open Kingshot.
+2. In Kingshot Recorder, pick the emulator (or, on Windows, a screen or window) to record.
 3. Choose a **quality**: Small, Balanced, High, Very high or Maximum. High is the usual choice.
 4. Press **Start recording**, play, and press **Stop & save** when you are done.
 
-Recordings are saved to `Videos\Kingshot Recorder\Original Videos`. The video is encoded while you record, so saving at the end is quick. You can change the folders in the gear panel.
+The video is encoded while you record, so saving at the end is quick. Recordings are saved to:
+
+- Windows: `Videos\Kingshot Recorder\Original Videos`
+- Mac: the `Kingshot Recorder` folder in `Movies`
+
+You can change the folders in the gear panel.
 
 ## Blur
 
@@ -32,17 +59,17 @@ Open the **Blur** tab, tick the recordings you want to blur and start. The Blurr
 - checks its own result frame by frame at every switch, and tells you if something is wrong;
 - keeps finished parts if it is stopped, so you can resume later without starting over.
 
-Blurred videos go to `Videos\Kingshot Recorder\Blurred`. You can drag files onto the Blur tab, and the sound is kept unless you turn it off.
+Blurred videos go to the **Blurred** folder next to your recordings. You can drag files onto the Blur tab. The sound is left out of the blurred video unless you tick **Keep sound**.
 
 **Quality presets for the blurred video:** Tiny, Compact, Small, Balanced, High, Very high, Ultra and Maximum. Each is named by its approximate size per hour (1.5 GB/h up to 5 GB/h). High (3.5 GB/h) is the recommended one.
 
 ## Graphics cards
 
-The encoder is chosen automatically: **NVIDIA** (NVENC) first, then **AMD** (AMF), then **Intel** (QSV), and finally the **CPU**, which works on any PC but is much slower. On NVIDIA cards the scan also uses the GPU for decoding.
+The encoder is chosen automatically. On Windows: **NVIDIA** (NVENC) first, then **AMD** (AMF), then **Intel** (QSV), and finally the **CPU**, which works on any PC but is much slower. On NVIDIA cards the scan also uses the GPU for decoding. On the Mac the built-in Apple encoder (VideoToolbox) is used.
 
 ## Problems?
 
-Every recording and blur writes a log. When you report a bug, send the log files from the **Logs folder** button in the gear panel. They show what the app saw and decided, plus your PC's specs and folder paths, so look them over before sharing.
+Every recording and blur writes a log. When you report a bug, send the log files from the **Logs folder** button in the gear panel. They show what the app saw and decided, plus your computer's specs and folder paths, so look them over before sharing.
 
 ---
 
