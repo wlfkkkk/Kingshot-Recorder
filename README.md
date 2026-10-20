@@ -7,7 +7,6 @@ On Windows it can also record a whole screen or a single window, and can record 
 | | Version | Status |
 |---|---|---|
 | **Windows** | 1.0.3 | Current release, with automatic updates. **1.0.4 is planned for Friday 23 October 2026.** |
-| **macOS** (Apple Silicon) | 0.1.0 | **Test release.** Recorder and Blurrer, with automatic updates. |
 
 ## Install on Windows
 
@@ -17,20 +16,9 @@ On Windows it can also record a whole screen or a single window, and can record 
 
 Needs LDPlayer or BlueStacks with ADB access turned on in the emulator's settings.
 
-## Install on Mac (test release)
-
-The Mac version is an early test build. It runs on Apple Silicon Macs (M1 or newer) and records the emulator (BlueStacks Air) only: no sound, screen or window recording yet.
-
-1. Download **KingshotRecorder-osx-Setup.pkg** from the [Mac 0.1.0 release](https://github.com/wlfkkkk/Kingshot-Recorder/releases/tag/mac-0.1.0). The "latest release" link above is for Windows.
-2. The app is not signed by Apple (only ad-hoc signed), so double-clicking the `.pkg` shows an "unidentified developer" warning. **Right-click the `.pkg` and choose Open**, then Open again. If macOS still blocks it, go to **System Settings > Privacy & Security** and click **Open Anyway**.
-3. macOS asks for your password, because it installs into Applications.
-4. Turn on ADB in BlueStacks Air's settings.
-
 ## Updates
 
-Both versions update themselves from this page's releases. Click the gear button and choose **Check for updates**. Only the changed files are downloaded, and your settings and videos stay as they are. The app never updates during a recording or a blur.
-
-On the Mac, macOS may ask you once more to allow the app after an update, because it is not signed by Apple.
+The app updates itself from this page's releases. Click the gear button and choose **Check for updates**. Only the changed files are downloaded, and your settings and videos stay as they are. The app never updates during a recording or a blur.
 
 ## Access key
 
@@ -46,7 +34,6 @@ On the first start the app asks for a key, which you get from the person who sha
 The video is encoded while you record, so saving at the end is quick. Recordings are saved to:
 
 - Windows: `Videos\Kingshot Recorder\Original Videos`
-- Mac: the `Kingshot Recorder` folder in `Movies`
 
 You can change the folders in the gear panel.
 
@@ -65,7 +52,7 @@ Blurred videos go to the **Blurred** folder next to your recordings. You can dra
 
 ## Graphics cards
 
-The encoder is chosen automatically. On Windows: **NVIDIA** (NVENC) first, then **AMD** (AMF), then **Intel** (QSV), and finally the **CPU**, which works on any PC but is much slower. On NVIDIA cards the scan also uses the GPU for decoding. On the Mac the built-in Apple encoder (VideoToolbox) is used.
+The encoder is chosen automatically. On Windows: **NVIDIA** (NVENC) first, then **AMD** (AMF), then **Intel** (QSV), and finally the **CPU**, which works on any PC but is much slower. On NVIDIA cards the scan also uses the GPU for decoding.
 
 ## Problems?
 
